@@ -42,39 +42,3 @@ main{
     align-items: center;
 }
 
-.show_pokemon{
-    height: 300px;
-    background-color: aqua;
-    width: 300px;
-}
-
-.sort_all_elements{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.sort_id_name_pokemon{
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 20px;
-}
-
-.sort_img_pokemon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-}
-
-.sort_all_pokemon{
-    display: flex;
-
-}
-
-#id_search_pokemon{
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
