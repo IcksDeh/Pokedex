@@ -1,11 +1,14 @@
-.pokemon_card_background_color{
+.class_pokemon_card{
     height: 300px;
-    background-color: aqua;
+    background-color: #B1DFFC;
     width: 300px;
+    border-radius: 10px;
 }
 
 .show_pokemon{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
     gap: 50px;
 }
 
@@ -38,4 +41,26 @@
 #id_search_pokemon{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.img_pokemon{
+    height: 150px;
+    width: auto;
+}
+
+.class_sort_lable_type_pokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.label_each_pokemon{
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: bebas;
 }

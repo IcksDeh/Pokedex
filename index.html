@@ -7,6 +7,7 @@
     <title>Pokedex</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./styles/pokecards.css">
+    <link rel="stylesheet" href="./styles/color_pokemon_type.css">
     <script src="./script.js" defer></script>
     <script src="./scripts/templates.js" defer></script>
 </head>
@@ -21,6 +22,18 @@
         <div class="sort_all_elements">
             <input type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
             <div id="id_show_pokemon" class="show_pokemon content_border">
+                <div id="id_pokemon_card" class="class_pokemon_card">
+                    <div class="sort_id_name_pokemon">
+                        <p>Index</p>
+                        <p>Name</p>
+                    </div>    
+                    <div class="sort_img_pokemon">
+                        <img class="img_pokemon" src="" alt="img Pokemon">
+                    </div>
+                    <div id="id_sort_lable_type_pokemon" class="class_sort_lable_type_pokemon">
+                        <div class = "label_each_pokemon">Type 1</div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

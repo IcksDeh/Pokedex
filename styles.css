@@ -1,3 +1,13 @@
+@font-face {
+    font-family: luckiest_guy;
+    src: url(./assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
 body{
     margin: 0;
     background-image: url(./assets/img/background_img_universe.jpg);
@@ -25,6 +35,10 @@ main{
     justify-content: center;
 }
 
+p{
+    font-family: luckiest_guy;
+}
+
 .content_border{
     width: 1440px
 }
@@ -41,4 +55,6 @@ main{
     justify-content: space-between;
     align-items: center;
 }
+
+
 

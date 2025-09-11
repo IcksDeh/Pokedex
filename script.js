@@ -29,7 +29,19 @@ function showPokemon(){
     let showPokemonInHTML = document.getElementById("id_show_pokemon");
     for (let pokeIndex = 0; pokeIndex < detailPokemonInfo.length; pokeIndex++) {
         showPokemonInHTML.innerHTML += templatePokemonCard(pokeIndex);
+        showTypeEachPokemon(pokeIndex);
 
     }
 }
+
+function showTypeEachPokemon(pokeIndex) {
+    let showLabelEachPokemon = document.getElementById("id_sort_lable_type_pokemon"+pokeIndex);
+
+    for (let typeIndex = 0; typeIndex < detailPokemonInfo[pokeIndex].types.length; typeIndex++) {
+
+        showLabelEachPokemon.innerHTML += templateLabelEachPokemon(typeIndex, pokeIndex);
+    }
+}
+
+
 
