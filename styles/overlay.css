@@ -39,6 +39,10 @@
     border-radius: 5px;
 }
 
+.x_button:hover{
+    cursor: pointer;
+}
+
 .image_overlay{
     display: flex;
     justify-content: center;
