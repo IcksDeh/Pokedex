@@ -43,5 +43,16 @@ function showTypeEachPokemon(pokeIndex) {
     }
 }
 
+function showPokemonOverlay(pokeIndex){
+    let showPokemonDetails = document.getElementById('id_overlay_pokemon');
+
+    showPokemonDetails.classList.remove('d_none');
+    showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex);
+}
+
+function closeOverlay(){
+    let showPokemonDetails = document.getElementById('id_overlay_pokemon');
+    showPokemonDetails.classList.add('d_none');
+}
 
 

@@ -1,5 +1,5 @@
 function templatePokemonCard(pokeIndex){
-    return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card">
+    return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card" onclick="showPokemonOverlay(${pokeIndex})">
                     <div class="sort_id_name_pokemon">
                         <p>${pokeIndex+1}</p>
                         <p>${detailPokemonInfo[pokeIndex].name}</p>
@@ -13,5 +13,24 @@ function templatePokemonCard(pokeIndex){
 }
 
 function templateLabelEachPokemon(typeIndex, pokeIndex){
-    return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`
+    return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}_border">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`
+}
+
+function templateOverlayPokemonDetails(pokeIndex){
+    return `<div class="sort_header_overlay">
+                <div class="sort_id_name_overlay">
+                     <p>${pokeIndex+1}</p>
+                    <p>${detailPokemonInfo[pokeIndex].name}</p>
+                </div>
+                <div class="sort_x_button">
+                     <button onclick="closeOverlay()" class="x_button">X</button>
+                 </div>      
+            </div>
+            <div class="image_overlay">
+                <img src="${detailPokemonInfo[pokeIndex].sprites.front_default}" alt="pokemon">
+            </div>
+            <div class="sort_next_previus_button">
+                <button onclick="showPreviousPokemon${pokeIndex}" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
+                <button onclick="showNextPokemon${pokeIndex}" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button.png" alt="">Catch Next</button>
+            </div>  `
 }

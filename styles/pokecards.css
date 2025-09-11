@@ -1,9 +1,29 @@
 .class_pokemon_card{
     height: 300px;
     background-color: #B1DFFC;
-    width: 300px;
+    width: 200px;
     border-radius: 10px;
 }
+
+.class_pokemon_card:hover{
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, 
+                        -9px 5px 15px 5px #FFE488, 
+                        -7px -5px 15px 5px #8CFF85, 
+                        12px -5px 15px 5px #80C7FF, 
+                        12px 10px 15px 7px #E488FF, 
+                        -10px 10px 15px 7px #FF616B, 
+                        -10px -7px 27px 1px #8E5CFF, 
+                        -3px 8px 50px -16px #000000; 
+    box-shadow: 5px 5px 15px 5px #FF8080, 
+                -9px 5px 15px 5px #FFE488, 
+                -7px -5px 15px 5px #8CFF85, 
+                12px -5px 15px 5px #80C7FF, 
+                12px 10px 15px 7px #E488FF, 
+                -10px 10px 15px 7px #FF616B, 
+                -10px -7px 27px 1px #8E5CFF, 
+                -3px 8px 50px -16px #000000;
+    cursor: pointer;
+            }
 
 .show_pokemon{
     display: flex;
@@ -22,7 +42,8 @@
 
 .sort_id_name_pokemon{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     padding: 10px 20px;
 }
 
@@ -58,9 +79,11 @@
 .label_each_pokemon{
     background-color: white;
     border-radius: 20px;
-    padding: 8px 10px;
+    padding: 4px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: bebas;
+    min-width: 35px;
 }
+

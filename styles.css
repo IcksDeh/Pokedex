@@ -39,6 +39,10 @@ p{
     font-family: luckiest_guy;
 }
 
+.d_none{
+    display: none;
+}
+
 .content_border{
     width: 1440px
 }

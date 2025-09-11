@@ -1,0 +1,69 @@
+.sort_content_overlay{
+    position: relative;
+}
+
+.overlay_pokemon{
+    height: 600px;
+    width: 500px;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+
+.sort_id_name_overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort_header_overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.sort_x_button{
+    display: flex;
+    justify-content: right;
+}
+
+.x_button{
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+}
+
+.image_overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.sort_next_previus_button{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.img_button_pokeball{
+    height: 30px;
+}
+
+.style_next_previous_button{
+    display: flex;
+    align-items: center;
+    font-family: bebas;
+    gap: 8px;
+}
+
+.style_next_previous_button:hover{
+    cursor: pointer;
+    border: 2px solid gray;
+}
