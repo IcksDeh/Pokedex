@@ -11,13 +11,15 @@
 body{
     margin: 0;
     background-image: url(./assets/img/background_img_universe.jpg);
-    height: 100vh;
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-attachment: fixed;
+
 }
 
 header{
@@ -26,6 +28,9 @@ header{
     background-color: rgb(7, 60, 95);
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 main{
@@ -60,6 +65,16 @@ p{
     align-items: center;
 }
 
+.style_input_search_field{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+}
+
 .img_loading_spinner{
     height: 200px;
     width: auto;
@@ -87,3 +102,38 @@ p{
     font-size: 60px;
     color: red;
 }
+
+.area_catch_next_pokemon{
+    height: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_catch_next_pokemon{
+    height: 60px;
+    width: 600px;
+    border-radius: 10px;
+    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: luckiest_guy;
+    font-size: 30px;
+}
+
+.button_catch_next_pokemon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
+-webkit-box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
+-moz-box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
+}
+
+.img_pokeball_catch_next_pokemon{
+    height: 40px;
+}
+

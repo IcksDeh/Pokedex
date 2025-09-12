@@ -21,7 +21,9 @@
     </header>
     <main class="content_border">
         <div class="sort_all_elements">
-            <input type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
+            <div class="style_input_search_field">
+                <input class="postion_sticky" type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
+            </div>
             <div class="sort_content_overlay">
                 <div id="id_show_pokemon" class="show_pokemon content_border">
                     <div id="id_pokemon_card" class="class_pokemon_card" onclick="showPokemonOverlay()">
@@ -44,7 +46,7 @@
                             <p>Name</p>
                         </div>
                         <div class="sort_x_button">
-                            <button class="x_button">X</button>
+                            <button onclick="closeOverlay()" class="x_button">X</button>
                         </div>
                        
                     </div>
@@ -53,8 +55,11 @@
                     </div>
                     <div class="sort_next_previus_button">
                         <button id="prevous_button" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
-                        <button id="next_button" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button.png" alt="">Catch Next</button>
+                        <button id="next_button" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
                     </div>    
+                </div>
+                <div id="id_area_catch_next_pokemon" class="area_catch_next_pokemon">    
+                    
                 </div>
             </div>    
         </div>

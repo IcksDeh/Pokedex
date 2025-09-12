@@ -25,6 +25,7 @@ async function fetchSinglePokemon(){
     console.log(detailPokemonInfo);
     removeLoadingSpinner();
     showPokemon();
+
 }
 
 function showPokemon(){
@@ -32,8 +33,8 @@ function showPokemon(){
     for (let pokeIndex = 0; pokeIndex < detailPokemonInfo.length; pokeIndex++) {
         showPokemonInHTML.innerHTML += templatePokemonCard(pokeIndex);
         showTypeEachPokemon(pokeIndex);
-
     }
+    showCatchNextButton();
 }
 
 function showTypeEachPokemon(pokeIndex) {
@@ -67,3 +68,7 @@ function removeLoadingSpinner(){
     loadingSpinner.classList.add('d_none');
 }
 
+function showCatchNextButton(){
+    let buttonCatchNext = document.getElementById('id_area_catch_next_pokemon');
+    buttonCatchNext.innerHTML = templateCatchNextButton();
+}

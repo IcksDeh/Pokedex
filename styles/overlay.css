@@ -1,12 +1,13 @@
 .sort_content_overlay{
     position: relative;
+    z-index: 1;
 }
 
 .overlay_pokemon{
     height: 600px;
     width: 500px;
     background-color: blue;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -47,7 +48,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
 }
 
 .sort_next_previus_button{
@@ -70,4 +70,9 @@
 .style_next_previous_button:hover{
     cursor: pointer;
     border: 2px solid gray;
+}
+
+.img_pokemon_overlay{
+    height: 150px;
+    width: auto;
 }

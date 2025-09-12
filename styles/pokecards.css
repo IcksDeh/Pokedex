@@ -23,6 +23,7 @@
                 -10px -7px 27px 1px #8E5CFF, 
                 -3px 8px 50px -16px #000000;
     cursor: pointer;
+    transform: scale(1.1);
             }
 
 .show_pokemon{
