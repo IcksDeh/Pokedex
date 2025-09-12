@@ -2,11 +2,12 @@ let allPokemon = [];
 let detailPokemonInfo = []; 
 
 function init(){
-    loadPokemon()
+    showLoadingSpinner();
+    loadPokemon();
 }
 
 async function loadPokemon (){
-    const fetchPokemonAPI = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=0");
+    const fetchPokemonAPI = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100&offset=0");
     const pokemon = await fetchPokemonAPI.json();
 
     allPokemon = pokemon.results;
@@ -22,6 +23,7 @@ async function fetchSinglePokemon(){
         detailPokemonInfo.push(singlePokemon); 
     }
     console.log(detailPokemonInfo);
+    removeLoadingSpinner();
     showPokemon();
 }
 
@@ -55,4 +57,13 @@ function closeOverlay(){
     showPokemonDetails.classList.add('d_none');
 }
 
+function showLoadingSpinner(){
+    let loadingSpinner = document.getElementById('id_loading_spinner');
+    loadingSpinner.classList.remove('d_none');
+}
+
+function removeLoadingSpinner(){
+    let loadingSpinner = document.getElementById('id_loading_spinner');
+    loadingSpinner.classList.add('d_none');
+}
 
