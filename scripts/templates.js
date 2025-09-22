@@ -1,5 +1,5 @@
 function templatePokemonCard(pokeIndex){
-    return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card" onclick="showPokemonOverlay(${pokeIndex})">
+    return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card ${detailPokemonInfo[pokeIndex].types[0].type.name}_border ${detailPokemonInfo[pokeIndex].types[0].type.name}_background_light" onclick="showPokemonOverlay(${pokeIndex})">
                     <div class="sort_id_name_pokemon">
                         <p>${pokeIndex+1}</p>
                         <p>${detailPokemonInfo[pokeIndex].name}</p>

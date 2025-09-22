@@ -69,3 +69,151 @@
 .normal_background{
    background-color: #6E535B; 
 }
+
+/* light background */
+
+.fire_background_light{
+    background-color: rgba(153, 50, 39, 0.92);
+}
+
+.water_background_light{
+   background-color: rgba(50, 83, 221, 0.92); 
+}
+
+.ice_background_light{
+    background-color: rgba(156, 208, 243, 0.92);
+}
+
+/* Link zum Umwandeln von Hex in rgb Farben https://rgbacolorpicker.com/hex-to-rgba*/
+.grass_background_light{
+    background-color: rgba(106, 198, 89, 0.88);
+}
+
+.poison_background_light{
+    background-color: blueviolet;
+}
+
+.bug_background_light{
+    background-color: #2B4929;
+}
+
+.flying_background_light{
+    background-color: #53657A;
+}
+
+.dragon_background_light{
+    background-color: #5A8793;
+}
+
+.electric_background_light{
+    background-color: #E3E245;
+}
+
+.fairy_background_light{
+    background-color: orchid;
+}
+
+.ghost_background_light{
+    background-color: mediumslateblue;
+}
+
+.ground_background_light{
+    background-color: #9C7531;
+}
+
+.steel_background_light{
+    background-color: #64746D;
+}
+
+.rock_background_light{
+    background-color: #411C0E;
+}
+
+.dark_background_light{
+    background-color: #5A5978;
+}
+
+.fighting_background_light{
+    background-color: #D96D40;
+}
+
+.psychic_background_light{
+    background-color: #DE4390;
+}
+
+.normal_background_light{
+   background-color: #6E535B; 
+}
+
+/* border */
+.fire_border{
+    border: 5px solid #993227;
+}
+
+.water_border{
+   border: 5px solid #3253DD; 
+}
+
+.ice_border{
+    border: 5px solid #9CD0F3;
+}
+
+.grass_border{
+    border: 5px solid #6AC659;
+}
+
+.poison_border{
+    border: 5px solid blueviolet;
+}
+
+.bug_border{
+    border: 5px solid #2B4929;
+}
+
+.flying_border{
+    border: 5px solid #53657A;
+}
+
+.dragon_border{
+    border: 5px solid #5A8793;
+}
+
+.electric_border{
+    border: 5px solid #E3E245;
+}
+
+.fairy_border{
+    border: 5px solid orchid;
+}
+
+.ghost_border{
+    border: 5px solid mediumslateblue;
+}
+
+.ground_border{
+    border: 5px solid #9C7531;
+}
+
+.steel_border{
+    border: 5px solid #64746D;
+}
+
+.rock_border{
+    border: 5px solid #411C0E;
+}
+
+.dark_border{
+    border: 5px solid #5A5978;
+}
+
+.fighting_border{
+    border: 5px solid #D96D40;
+}
+
+.psychic_border{
+    border: 5px solid #DE4390;
+}
+
+.normal_border{
+   border: 5px solid #6E535B; 
+}
