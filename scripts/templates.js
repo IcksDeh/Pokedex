@@ -13,7 +13,7 @@ function templatePokemonCard(pokeIndex){
 }
 
 function templateLabelEachPokemon(typeIndex, pokeIndex){
-    return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}_border">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`
+    return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}_background">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`
 }
 
 function templateOverlayPokemonDetails(pokeIndex){
@@ -36,6 +36,6 @@ function templateOverlayPokemonDetails(pokeIndex){
 }
 
 function templateCatchNextButton() {
-    return ` <button class="button_catch_next_pokemon"><img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next Pokemon!<img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt=""></button>`
+    return ` <button onclick = loadMorePokemon() class="button_catch_next_pokemon"><img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next Pokemon!<img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt=""></button>`
     
 }

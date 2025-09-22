@@ -1,71 +1,71 @@
-.fire_border{
+.fire_background{
     background-color: #993227;
 }
 
-.water_border{
+.water_background{
    background-color: #3253DD; 
 }
 
-.ice_border{
+.ice_background{
     background-color: #9CD0F3;
 }
 
-.grass_border{
+.grass_background{
     background-color: #6AC659;
 }
 
-.poison_border{
+.poison_background{
     background-color: blueviolet;
 }
 
-.bug_border{
+.bug_background{
     background-color: #2B4929;
 }
 
-.flying_border{
+.flying_background{
     background-color: #53657A;
 }
 
-.dragon_border{
+.dragon_background{
     background-color: #5A8793;
 }
 
-.electric_border{
+.electric_background{
     background-color: #E3E245;
 }
 
-.fairy_border{
+.fairy_background{
     background-color: orchid;
 }
 
-.ghost_border{
+.ghost_background{
     background-color: mediumslateblue;
 }
 
-.ground_border{
+.ground_background{
     background-color: #9C7531;
 }
 
-.steel_border{
+.steel_background{
     background-color: #64746D;
 }
 
-.rock_border{
+.rock_background{
     background-color: #411C0E;
 }
 
-.dark_border{
+.dark_background{
     background-color: #5A5978;
 }
 
-.fighting_border{
+.fighting_background{
     background-color: #D96D40;
 }
 
-.psychic_border{
+.psychic_background{
     background-color: #DE4390;
 }
 
-.normal_border{
+.normal_background{
    background-color: #6E535B; 
 }
