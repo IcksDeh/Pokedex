@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./styles/pokecards.css">
     <link rel="stylesheet" href="./styles/color_pokemon_type.css">
     <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="./styles/mediaqueries.css">
     <script src="./script.js" defer></script>
     <script src="./scripts/templates.js" defer></script>
 </head>
@@ -22,7 +23,7 @@
     <main class="content_border">
         <div class="sort_all_elements">
             <div class="style_input_search_field">
-                <input class="postion_sticky" type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
+                <input oninput="filterbyName(event)" class="postion_sticky" type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
             </div>
             <div class="sort_content_overlay">
                 <div id="id_show_pokemon" class="show_pokemon content_border">
@@ -76,3 +77,4 @@
     </div>
     
 </html>
+

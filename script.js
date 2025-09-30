@@ -1,5 +1,5 @@
 let allPokemon = [];
-let detailPokemonInfo = []; 
+let detailPokemonInfo = [];
 let offset = 0;
 
 function init(){
@@ -95,4 +95,37 @@ async function loadMorePokemon(){
     allPokemon = pokemon.results;
     fetchSinglePokemon();
 
+}
+
+function showPreviousPokemon(pokeIndex){
+    let previousPokemon = pokeIndex - 1;
+    if (previousPokemon >= 0){
+        showPokemonOverlay(previousPokemon);
+    }
+    
+}
+
+function showNextPokemon(pokeIndex){
+    let nextPokemon = pokeIndex + 1;
+    if(nextPokemon < detailPokemonInfo.length){
+        showPokemonOverlay(nextPokemon);
+    }
+}
+
+function filterbyName(event){
+    const searchTerm = event.target.value;
+    let pokeList = detailPokemonInfo.map(pokemon => pokemon.name);
+    let pokeCard = document.querySelectorAll('.class_pokemon_card');
+    console.log(pokeCard);
+
+    pokeList.forEach(function(pokeName){
+        if (pokeName.includes(searchTerm)){
+            
+        } else {
+            pokeCard.element.classList.add('d_none');
+        }
+
+    }
+
+)
 }

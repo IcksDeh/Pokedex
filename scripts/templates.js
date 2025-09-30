@@ -30,8 +30,8 @@ function templateOverlayPokemonDetails(pokeIndex){
                 <img class="img_pokemon_overlay" src="${detailPokemonInfo[pokeIndex].sprites.front_default}" alt="pokemon">
             </div>
             <div class="sort_next_previus_button">
-                <button onclick="showPreviousPokemon${pokeIndex}" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
-                <button onclick="showNextPokemon${pokeIndex}" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
+                <button onclick="showPreviousPokemon(${pokeIndex})" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
+                <button onclick="showNextPokemon(${pokeIndex})" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
             </div>  `
 }
 

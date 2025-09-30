@@ -73,15 +73,15 @@
 /* light background */
 
 .fire_background_light{
-    background-color: rgba(153, 50, 39, 0.92);
+    background-color: rgba(153, 50, 39, 0.88);
 }
 
 .water_background_light{
-   background-color: rgba(50, 83, 221, 0.92); 
+   background-color: rgba(50, 83, 221, 0.88); 
 }
 
 .ice_background_light{
-    background-color: rgba(156, 208, 243, 0.92);
+    background-color: rgba(156, 208, 243, 0.88);
 }
 
 /* Link zum Umwandeln von Hex in rgb Farben https://rgbacolorpicker.com/hex-to-rgba*/
@@ -90,59 +90,60 @@
 }
 
 .poison_background_light{
-    background-color: blueviolet;
+    background-color: rgba(138, 43, 226, 0.88);
 }
 
 .bug_background_light{
-    background-color: #2B4929;
+    background-color: rgba(43, 73, 41, 0.88);
 }
 
 .flying_background_light{
-    background-color: #53657A;
+    background-color: rgba(83, 101, 122, 0.88);
 }
 
 .dragon_background_light{
-    background-color: #5A8793;
+    background-color: rgba(90, 135, 147, 0.88);
 }
 
 .electric_background_light{
-    background-color: #E3E245;
+    background-color: rgba(227, 226, 69, 0.88);
 }
 
 .fairy_background_light{
-    background-color: orchid;
+    background-color: rgba(218, 112, 214, 0.88);
 }
 
 .ghost_background_light{
-    background-color: mediumslateblue;
+    background-color: rgba(123, 104, 238, 0.88);
 }
 
 .ground_background_light{
-    background-color: #9C7531;
+    background-color: rgba(156, 117, 49, 0.88);
 }
 
 .steel_background_light{
-    background-color: #64746D;
+    background-color: rgba(100, 116, 109, 0.88);
 }
 
 .rock_background_light{
-    background-color: #411C0E;
+    background-color: rgba(65, 28, 14, 0.88);
 }
 
 .dark_background_light{
-    background-color: #5A5978;
+    background-color: rgba(90, 89, 120, 0.88);
 }
 
 .fighting_background_light{
-    background-color: #D96D40;
+    background-color: rgba(217, 109, 64, 0.88);
 }
 
 .psychic_background_light{
-    background-color: #DE4390;
+    background-color: rgba(222, 67, 144, 0.88);
 }
 
 .normal_background_light{
-   background-color: #6E535B; 
+   background-color: rgba(110, 83, 91, 0.88);
+; 
 }
 
 /* border */
