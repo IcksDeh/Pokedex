@@ -22,16 +22,28 @@ async function fetchSinglePokemon(){
         let fetchSinglePokemonByApi = await fetch (allPokemon[pokeIndex].url);
         let singlePokemon = await fetchSinglePokemonByApi.json();
         detailPokemonInfo.push(singlePokemon); 
+        fetchShowAbilities(pokeIndex);
     }
     console.log(detailPokemonInfo);
     removeLoadingSpinner();
     showPokemon();
+    
 
+}
+
+async function fetchShowAbilities(pokeIndex) {
+    for (let abilityIndex = 0; abilityIndex < detailPokemonInfo[pokeIndex].abilities.length; abilityIndex++) {
+        let fetchEachAbility = await fetch (detailPokemonInfo[pokeIndex].abilities[abilityIndex].ability.url);
+        let eachAbility = await fetchEachAbility.json();
+        console.log(eachAbility);
+        
+    }
+    
 }
 
 function showPokemon(){
     let showPokemonInHTML = document.getElementById("id_show_pokemon");
-    showPokemonInHTML.innerHTML = "";
+    // showPokemonInHTML.innerHTML = ""; wieder aktivieren --> in bei css für overlay backgroundcolor wieder entfernen
     for (let pokeIndex = 0; pokeIndex < detailPokemonInfo.length; pokeIndex++) {
         showPokemonInHTML.innerHTML += templatePokemonCard(pokeIndex);
         showTypeEachPokemon(pokeIndex);
@@ -114,15 +126,14 @@ function showNextPokemon(pokeIndex){
 
 function filterbyName(event){
     const searchTerm = event.target.value;
-    let pokeList = detailPokemonInfo.map(pokemon => pokemon.name);
-    let pokeCard = document.querySelectorAll('.class_pokemon_card');
-    console.log(pokeCard);
 
-    pokeList.forEach(function(pokeName){
+    detailPokemonInfo.forEach(function(pokemon, index){
+        let pokeName = pokemon.name.toLowerCase();
+        let eachPokeCard = document.getElementById("id_pokemon_card"+index);
         if (pokeName.includes(searchTerm)){
-            
+            eachPokeCard.classList.remove('d_none');
         } else {
-            pokeCard.element.classList.add('d_none');
+            eachPokeCard.classList.add('d_none');
         }
 
     }

@@ -3,3 +3,29 @@
         width: 100%;
     }
 }
+
+@media(max-width: 640px){
+    .button_catch_next_pokemon{
+        width: 400px;
+        font-size: 20px;
+
+    }
+}
+
+@media(max-width: 440px){
+    .button_catch_next_pokemon{
+        width: 200px;
+        font-size: 20px;
+        
+    }
+
+    .img_pokeball_catch_next_pokemon{
+        display: none;
+    }
+}
+
+@media(max-width: 550px){
+    .overlay_pokemon{
+        max-width: 400px;
+    }
+}

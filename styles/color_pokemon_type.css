@@ -86,63 +86,63 @@
 
 /* Link zum Umwandeln von Hex in rgb Farben https://rgbacolorpicker.com/hex-to-rgba*/
 .grass_background_light{
-    background-color: rgba(106, 198, 89, 0.88);
+    background-color: rgba(106, 198, 89, 0.8);
 }
 
 .poison_background_light{
-    background-color: rgba(138, 43, 226, 0.88);
+    background-color: rgba(138, 43, 226, 0.8);
 }
 
 .bug_background_light{
-    background-color: rgba(43, 73, 41, 0.88);
+    background-color: rgba(43, 73, 41, 0.8);
 }
 
 .flying_background_light{
-    background-color: rgba(83, 101, 122, 0.88);
+    background-color: rgba(83, 101, 122, 0.8);
 }
 
 .dragon_background_light{
-    background-color: rgba(90, 135, 147, 0.88);
+    background-color: rgba(90, 135, 147, 0.8);
 }
 
 .electric_background_light{
-    background-color: rgba(227, 226, 69, 0.88);
+    background-color: rgba(227, 226, 69, 0.8);
 }
 
 .fairy_background_light{
-    background-color: rgba(218, 112, 214, 0.88);
+    background-color: rgba(218, 112, 214, 0.8);
 }
 
 .ghost_background_light{
-    background-color: rgba(123, 104, 238, 0.88);
+    background-color: rgba(123, 104, 238, 0.8);
 }
 
 .ground_background_light{
-    background-color: rgba(156, 117, 49, 0.88);
+    background-color: rgba(156, 117, 49, 0.8);
 }
 
 .steel_background_light{
-    background-color: rgba(100, 116, 109, 0.88);
+    background-color: rgba(100, 116, 109, 0.8);
 }
 
 .rock_background_light{
-    background-color: rgba(65, 28, 14, 0.88);
+    background-color: rgba(65, 28, 14, 0.8);
 }
 
 .dark_background_light{
-    background-color: rgba(90, 89, 120, 0.88);
+    background-color: rgba(90, 89, 120, 0.8);
 }
 
 .fighting_background_light{
-    background-color: rgba(217, 109, 64, 0.88);
+    background-color: rgba(217, 109, 64, 0.8);
 }
 
 .psychic_background_light{
-    background-color: rgba(222, 67, 144, 0.88);
+    background-color: rgba(222, 67, 144, 0.8);
 }
 
 .normal_background_light{
-   background-color: rgba(110, 83, 91, 0.88);
+   background-color: rgba(110, 83, 91, 0.8);
 ; 
 }
 
