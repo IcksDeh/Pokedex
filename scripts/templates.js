@@ -26,13 +26,75 @@ function templateOverlayPokemonDetails(pokeIndex){
                      <button onclick="closeOverlay()" class="x_button">X</button>
                  </div>      
             </div>
-            <div class="image_overlay">
-                <img class="img_pokemon_overlay" src="${detailPokemonInfo[pokeIndex].sprites.front_default}" alt="pokemon">
+            <div class="pokemon_information_switch_buttons">
+                <button onclick="showNormalPokemon(${pokeIndex})" class="button_pokemon_information button_information_activiated" id="button_normal_pokemon${pokeIndex}">normal</button>
+                <button onclick="showShinyPokemon(${pokeIndex})"class="button_pokemon_information" id="button_shiny_pokemon${pokeIndex}">shiny</button>
             </div>
-            
+            <div class="image_overlay">
+                <img id="normal_pokemon_image${pokeIndex}" class="img_pokemon_overlay" src="${detailPokemonInfo[pokeIndex].sprites.front_default}" alt="pokemon">
+                <img id="shiny_pokemon_image${pokeIndex}" class="img_pokemon_overlay d_none" src="${detailPokemonInfo[pokeIndex].sprites.front_shiny}" alt="pokemon">
+            </div>
+            <div class="pokemon_information_switch_buttons">
+                    <button onclick="showGeneralInformation(${pokeIndex})" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
+                    <button onclick="showStatsInformation(${pokeIndex})" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
+                    <button onclick="showMovesInformation(${pokeIndex})" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
+            </div>
+            <div class="container_detail_information" id= "id_general_information${pokeIndex}">
+                        <table>
+                            <tr>
+                                <td>Height:</td>
+                                <td>${detailPokemonInfo[pokeIndex].height}</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Weight:</td>
+                                <td>${detailPokemonInfo[pokeIndex].weight}</td>
+                            </tr>
+                        </table>
+            </div>
+            <div class=" container_detail_information d_none" id= "id_stats_information${pokeIndex}">
+                        <table>
+                            <tr>
+                                <td>HP:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[0].base_stat}</td>
+                            </tr>
+                            <tr>
+                                <td>Attack:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[1].base_stat}</td>
+                            </tr>
+                            <tr>
+                                <td>Defense:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[2].base_stat}</td>
+                            </tr>
+                            <tr>
+                                <td>Special Attack:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[3].base_stat}</td>
+                            </tr>
+                            <tr>
+                                <td>Special Defense:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[4].base_stat}</td>
+                            </tr>
+                            <tr>
+                                <td>Speed:</td>
+                                <td>${detailPokemonInfo[pokeIndex].stats[5].base_stat}</td>
+                            </tr>
+                        </table>
+            </div>
+            <div class="container_detail_information d_none" id= "id_moves_information${pokeIndex}">
+                        <ul>
+                            <li>${detailPokemonInfo[pokeIndex].moves[0].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[1].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[2].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[3].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[4].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[5].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[6].move.name}</li>
+                            <li>${detailPokemonInfo[pokeIndex].moves[7].move.name}</li>
+                        </ul>
+            </div>
             <div class="sort_next_previus_button">
-                <button onclick="showPreviousPokemon(${pokeIndex})" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
-                <button onclick="showNextPokemon(${pokeIndex})" class="style_next_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
+                <button onclick="showPreviousPokemon(${pokeIndex})" class="style_next_previous_button" id="id_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
+                <button onclick="showNextPokemon(${pokeIndex})" class="style_next_previous_button" id="id_next_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
             </div>  `
 }
 

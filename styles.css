@@ -143,3 +143,11 @@ p{
     height: 40px;
 }
 
+ul{
+    margin: 0;
+    list-style-type: none;   
+}
+
+.block_scrolling{
+    overflow: hidden;
+}
