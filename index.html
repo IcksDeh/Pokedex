@@ -24,12 +24,11 @@
     <main class="content_border ">
         <div class="sort_all_elements">
             <div class="style_input_search_field">
-                <input oninput="filterbyName(event)" class="postion_sticky" type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
+                <input oninput="filterbyName(event)" type="text" name="Search Pokemon" id="id_search_pokemon" placeholder="Search Pokemon...">
             </div>
             <div class="sort_content_overlay block_scrolling">
                 <div id="id_show_pokemon" class="show_pokemon content_border">
                 </div>
-                <!-- in Class wieder d_none einfügen -->
                 <div id="id_overlay_pokemon" class="overlay_pokemon d_none"> 
                 </div>
                 <div id="id_area_catch_next_pokemon" class="area_catch_next_pokemon">    
@@ -38,7 +37,6 @@
             </div>    
         </div>
     </main>
-    <!-- Loading Spinner -->
     <div id="id_loading_spinner" class="d_none content_loading_spinner ">
         <img class="img_loading_spinner" src="./assets/img/pokeball_loading_spinner.png" alt="">
         <p class="text_loading_spinner">Catch Pokemon...</p>

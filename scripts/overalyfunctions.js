@@ -46,6 +46,22 @@ function showNextPokemon(pokeIndex){
     }
 }
 
+function loadPokemonMoves(pokeIndex){
+    if(detailPokemonInfo[pokeIndex].moves.length >= 8){
+        loadEightPokemonMoves(pokeIndex);
+    }
+        else{loadAllPokemonMoves(pokeIndex);
+    }
+}
+
+function loadEightPokemonMoves(pokeIndex){
+    let showPokemonMoves = document.getElementById("show_pokemon_moves"+pokeIndex);
+    for (let moveIndex = 0; moveIndex < detailPokemonInfo[pokeIndex].moves.length == 8; moveIndex++) {
+        showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex);
+    }
+}
+
+
 function showGeneralInformation(pokeIndex){
     document.getElementById("id_general_information"+pokeIndex).classList.remove("d_none");
     document.getElementById("id_stats_information"+pokeIndex).classList.add("d_none");
@@ -74,6 +90,8 @@ function showMovesInformation(pokeIndex){
     document.getElementById("button_general_information"+pokeIndex).classList.remove("button_information_activiated");
     document.getElementById("button_stats_information"+pokeIndex).classList.remove("button_information_activiated");
     document.getElementById("button_moves_information"+pokeIndex).classList.add("button_information_activiated");
+
+    loadPokemonMoves(pokeIndex);
 }
 
 function showShinyPokemon(pokeIndex){
