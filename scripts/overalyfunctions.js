@@ -56,8 +56,16 @@ function loadPokemonMoves(pokeIndex){
 
 function loadEightPokemonMoves(pokeIndex){
     let showPokemonMoves = document.getElementById("show_pokemon_moves"+pokeIndex);
-    for (let moveIndex = 0; moveIndex < detailPokemonInfo[pokeIndex].moves.length == 8; moveIndex++) {
-        showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex);
+    for (let moveIndex = 0; moveIndex < 8; moveIndex++) {
+        showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex, moveIndex);
+    }
+}
+
+function loadAllPokemonMoves(pokeIndex){
+    let showPokemonMoves = document.getElementById("show_pokemon_moves"+pokeIndex);
+    for (let moveIndex = 0; moveIndex < detailPokemonInfo[pokeIndex].moves.length; moveIndex++) {
+        showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex, moveIndex);
+        
     }
 }
 

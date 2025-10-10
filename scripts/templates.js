@@ -95,6 +95,6 @@ function templateCatchNextButton() {
     
 }
 
-function showPokemonMoveTemplate(pokeIndex){
-   return `<li>${detailPokemonInfo[pokeIndex].moves[0].move.name}</li>`
+function showPokemonMoveTemplate(pokeIndex, moveIndex){
+   return `<li>${detailPokemonInfo[pokeIndex].moves[moveIndex].move.name}</li>`
 }
