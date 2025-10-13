@@ -5,6 +5,13 @@ function showPokemonOverlay(pokeIndex){
     showPokemonDetails.classList.add(detailPokemonInfo[pokeIndex].types[0].type.name +'_background');
     showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex);
     checkDisableButton(pokeIndex);
+    lockScrolling();
+}
+
+function lockScrolling(){
+    let lockScroll = document.getElementById("id_body");
+    lockScroll.classList.add("lock_scroll");
+    console.log(lockScroll);
 }
 
 function checkDisableButton(pokeIndex){
@@ -30,6 +37,13 @@ function removeBackgroundColor(){
 function closeOverlay(){
     let showPokemonDetails = document.getElementById('id_overlay_pokemon');
     showPokemonDetails.classList.add('d_none');
+    unlockScrolling();
+}
+
+function unlockScrolling() {
+    let lockScroll = document.getElementById("id_body");
+    lockScroll.classList.remove("lock_scroll");
+    console.log(lockScroll);
 }
 
 function showPreviousPokemon(pokeIndex){
@@ -68,7 +82,6 @@ function loadAllPokemonMoves(pokeIndex){
         
     }
 }
-
 
 function showGeneralInformation(pokeIndex){
     document.getElementById("id_general_information"+pokeIndex).classList.remove("d_none");

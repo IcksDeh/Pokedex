@@ -56,11 +56,23 @@ function showTypeEachPokemon(pokeIndex) {
 function showLoadingSpinner(){
     let loadingSpinner = document.getElementById('id_loading_spinner');
     loadingSpinner.classList.remove('d_none');
+    // disableCatchNextPokemonBtn();
+}
+
+// function disableCatchNextPokemonBtn(){
+//     let catchNextPokemonBtn = document.getElementById("id_button_catch_next_pokemon");
+//     catchNextPokemonBtn.disabled = true;
+// }
+
+function enableCatchNextPokemonBtn(){
+    let catchNextPokemonBtn = document.getElementById("id_button_catch_next_pokemon");
+    catchNextPokemonBtn.disabled = false;
 }
 
 function removeLoadingSpinner(){
     let loadingSpinner = document.getElementById('id_loading_spinner');
     loadingSpinner.classList.add('d_none');
+    enableCatchNextPokemonBtn();
 }
 
 function showCatchNextButton(){

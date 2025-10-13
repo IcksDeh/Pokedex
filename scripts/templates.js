@@ -91,7 +91,7 @@ function templateOverlayPokemonDetails(pokeIndex){
 }
 
 function templateCatchNextButton() {
-    return ` <button onclick = loadMorePokemon() class="button_catch_next_pokemon"><img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next Pokemon!<img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt=""></button>`
+    return ` <button id="id_button_catch_next_pokemon" onclick = loadMorePokemon() class="button_catch_next_pokemon"><img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next Pokemon!<img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt=""></button>`
     
 }
 

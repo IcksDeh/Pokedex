@@ -22,6 +22,10 @@ body{
 
 }
 
+.lock_scroll{
+    overflow: hidden;
+}
+
 header{
     height: 60px;
     width: 100%;
@@ -68,15 +72,17 @@ p{
 }
 
 .style_input_search_field{
-    height: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    height: 25px;
+    width: 1440px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 60px;
     z-index: 2;
+    background-image: url(./assets/img/background_img_universe.jpg);
 }
 
 .img_loading_spinner{
@@ -150,4 +156,11 @@ ul{
 
 .block_scrolling{
     overflow: hidden;
+}
+
+#id_search_pokemon{
+    margin: 0 !important;
+    height: 30px;
+    width: 200px;
+    font-family: luckiest_guy;
 }
