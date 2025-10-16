@@ -9,7 +9,7 @@ function init() {
 
 async function loadPokemon() {
   const fetchPokemonAPI = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
   );
   const pokemon = await fetchPokemonAPI.json();
 
