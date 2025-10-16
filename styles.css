@@ -1,166 +1,169 @@
 @font-face {
-    font-family: luckiest_guy;
-    src: url(./assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+  font-family: luckiest_guy;
+  src: url(./assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
 }
 
 @font-face {
-    font-family: bebas;
-    src: url(./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  font-family: bebas;
+  src: url(./assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf);
 }
 
-body{
-    margin: 0;
-    background-image: url(./assets/img/background_img_universe.jpg);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-attachment: fixed;
-
+body {
+  margin: 0;
+  background-image: url(./assets/img/background_img_universe.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-attachment: fixed;
 }
 
-.lock_scroll{
-    overflow: hidden;
+.lock_scroll {
+  overflow: hidden;
 }
 
-header{
-    height: 60px;
-    width: 100%;
-    background-color: rgb(7, 60, 95);
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+header {
+  height: 60px;
+  width: 100%;
+  background-color: rgb(7, 60, 95);
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-p{
-    font-family: luckiest_guy;
+p {
+  font-family: luckiest_guy;
 }
 
-.d_none{
-    display: none !important;
+.d_none {
+  display: none !important;
 }
 
-.content_border{
-    width: 1440px
+.content_border {
+  width: 1440px;
 }
 
-.title_header{
-    color: white;
-    margin-right: 30px;
+.title_header {
+  color: white;
+  margin-right: 30px;
 }
 
-.logo_header{
-    height: 60px;
-    margin-left: 30px;
+.logo_header {
+  height: 60px;
+  margin-left: 30px;
 }
-.header_sorting{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.style_input_search_field{
-    height: 25px;
-    width: 1440px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 60px;
-    z-index: 2;
-    background-image: url(./assets/img/background_img_universe.jpg);
+.header_sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.img_loading_spinner{
-    height: 200px;
-    width: auto;
-    animation: spin 2s linear infinite;
-    z-index: 1;
+.style_input_search_field {
+  height: 25px;
+  width: 1440px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 60px;
+  z-index: 2;
+  background-image: url(./assets/img/background_img_universe.jpg);
+}
+
+.img_loading_spinner {
+  height: 200px;
+  width: auto;
+  animation: spin 2s linear infinite;
+  z-index: 1;
 }
 
 @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.content_loading_spinner{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+.content_loading_spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.text_loading_spinner{
-    font-size: 60px;
-    color: red;
+.text_loading_spinner {
+  font-size: 60px;
+  color: red;
 }
 
-.area_catch_next_pokemon{
-    height: 60px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.area_catch_next_pokemon {
+  height: 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button_catch_next_pokemon{
-    height: 60px;
-    width: 600px;
-    border-radius: 10px;
-    border: 5px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    font-family: luckiest_guy;
-    font-size: 30px;
+.button_catch_next_pokemon {
+  height: 60px;
+  width: 600px;
+  border-radius: 10px;
+  border: 5px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-family: luckiest_guy;
+  font-size: 30px;
 }
 
-.button_catch_next_pokemon:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
--webkit-box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
--moz-box-shadow: 1px -1px 47px 19px rgba(255,0,0,0.75);
+.button_catch_next_pokemon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 1px -1px 47px 19px rgba(255, 0, 0, 0.75);
+  -webkit-box-shadow: 1px -1px 47px 19px rgba(255, 0, 0, 0.75);
+  -moz-box-shadow: 1px -1px 47px 19px rgba(255, 0, 0, 0.75);
 }
 
-.img_pokeball_catch_next_pokemon{
-    height: 40px;
+.img_pokeball_catch_next_pokemon {
+  height: 40px;
 }
 
-ul{
-    margin: 0;
-    list-style-type: none;   
+ul {
+  margin: 0;
+  list-style-type: none;
 }
 
-.block_scrolling{
-    overflow: hidden;
+.block_scrolling {
+  overflow: hidden;
 }
 
-#id_search_pokemon{
-    margin: 0 !important;
-    height: 30px;
-    width: 200px;
-    font-family: luckiest_guy;
+#id_search_pokemon {
+  margin: 0 !important;
+  height: 30px;
+  width: 200px;
+  font-family: luckiest_guy;
 }

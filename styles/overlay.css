@@ -1,117 +1,119 @@
-.sort_content_overlay{
-    position: relative;
-    z-index: 1;
-    padding-top: 50px;
+.sort_content_overlay {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
 }
 
-.overlay_pokemon{
-    height: 600px;
-    width: 400px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    z-index: 3;
-    aspect-ratio: 1/2;
-    border: solid 2px white;
-    box-shadow: 2px 0px 57px 41px rgba(255,255,255,0.75);
--webkit-box-shadow: 2px 0px 57px 41px rgba(255,255,255,0.75);
--moz-box-shadow: 2px 0px 57px 41px rgba(255,255,255,0.75);
+.overlay_pokemon {
+  height: 600px;
+  width: 400px;
+  position: fixed;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 3;
+  aspect-ratio: 1/2;
+  border: solid 2px white;
+  box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
 }
 
-
-.sort_id_name_overlay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 350px;
+.overlay_pokemon::backdrop {
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.sort_header_overlay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sort_id_name_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 350px;
 }
 
-.sort_x_button{
-    display: flex;
-    justify-content: right;
+.sort_header_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.x_button{
-    background-color: #000000;
-    color: white;
-    border-radius: 5px;
+.sort_x_button {
+  display: flex;
+  justify-content: right;
+  padding-right: 20px;
 }
 
-.x_button:hover{
-    cursor: pointer;
+.x_button {
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
 }
 
-.image_overlay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.x_button:hover {
+  cursor: pointer;
 }
 
-.sort_next_previus_button{
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
+.image_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img_button_pokeball{
-    height: 30px;
+.sort_next_previus_button {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
 }
 
-.style_next_previous_button{
-    display: flex;
-    align-items: center;
-    font-family: bebas;
-    gap: 8px;
+.img_button_pokeball {
+  height: 30px;
 }
 
-.style_next_previous_button:hover{
-    cursor: pointer;
-    border: 2px solid gray;
+.style_next_previous_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: bebas;
+  gap: 8px;
+  width: 130px;
 }
 
-.img_pokemon_overlay{
-    height: 150px;
-    width: auto;
+.style_next_previous_button:hover {
+  cursor: pointer;
+  border: 2px solid gray;
 }
 
-.pokemon_information_switch_buttons{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.img_pokemon_overlay {
+  height: 150px;
+  width: auto;
 }
 
-.button_pokemon_information{
-    width: 60px;
-    font-family: bebas;
+.pokemon_information_switch_buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.button_pokemon_information:hover{
-    cursor: pointer;
+.button_pokemon_information {
+  width: 60px;
+  font-family: bebas;
 }
 
-.container_detail_information{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    font-family: bebas;
-    font-size: 20px;
-    height: 180px;
-    align-items: start;
+.button_pokemon_information:hover {
+  cursor: pointer;
 }
 
-.button_information_activiated{
-    background-color: #2d2d2dc5;
-    color: white;
+.container_detail_information {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: bebas;
+  font-size: 20px;
+  height: 180px;
+  align-items: start;
 }
 
-
+.button_information_activiated {
+  background-color: #2d2d2dc5;
+  color: white;
+}

@@ -1,48 +1,65 @@
-@media (max-width: 1440px){
-    .content_border{
-        width: 100%;
-    }
+@media (max-width: 1440px) {
+  .content_border {
+    width: 100%;
+  }
 
-    .style_input_search_field{
-        width: 100%;
-    }
+  .style_input_search_field {
+    width: 100%;
+  }
 }
 
-@media(max-width: 640px){
-    .button_catch_next_pokemon{
-        width: 400px;
-        font-size: 20px;
-
-    }
+@media (max-width: 640px) {
+  .button_catch_next_pokemon {
+    width: 400px;
+    font-size: 20px;
+  }
 }
 
-@media(max-width: 440px){
-    .button_catch_next_pokemon{
-        width: 200px;
-        font-size: 20px;
-        
-    }
+@media (max-width: 440px) {
+  .button_catch_next_pokemon {
+    width: 200px;
+    font-size: 20px;
+  }
 
-    .img_pokeball_catch_next_pokemon{
-        display: none;
-    }
+  .img_pokeball_catch_next_pokemon {
+    display: none;
+  }
 }
 
-@media(max-width: 550px){
-    .overlay_pokemon{
-        width: 100%;
-        margin-left: 50px;
-        margin-right: 50px;
-        box-sizing: border-box;
-    }
+@media (max-width: 550px) {
+  .overlay_pokemon {
+    width: calc(100% - 100px);
+    box-sizing: border-box;
+    position: fixed;
+  }
 
-    .sort_header_overlay{
-        width: 100%;
-    }
+  .sort_header_overlay {
+    width: 100%;
+  }
 
-    .sort_id_name_overlax{
-        width: 100%;
-    }
+  .sort_id_name_overlay {
+    width: 100%;
+  }
 
+  .sort_content_overlay {
+    width: 100%;
+  }
 
+  .style_input_search_field {
+    width: 100%;
+  }
+
+  .sort_all_elements {
+    width: 100%;
+  }
+
+  .sort_next_previus_button {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .overlay_pokemon {
+    height: 650px;
+  }
 }
