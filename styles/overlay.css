@@ -12,10 +12,15 @@
   border-radius: 10px;
   z-index: 3;
   aspect-ratio: 1/2;
+  
   border: solid 2px white;
   box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
   -moz-box-shadow: 2px 0px 57px 41px rgba(255, 255, 255, 0.75);
+}
+
+.overlay_pokemon:focus-visible{
+  outline: none;
 }
 
 .overlay_pokemon::backdrop {

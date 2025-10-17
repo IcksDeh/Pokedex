@@ -33,8 +33,8 @@ function templateOverlayPokemonDetails(pokeIndex) {
                  </div>      
             </div>
             <div class="pokemon_information_switch_buttons">
-                <button onclick="showNormalPokemon(${pokeIndex})" class="button_pokemon_information button_information_activiated" id="button_normal_pokemon${pokeIndex}">normal</button>
-                <button onclick="showShinyPokemon(${pokeIndex})"class="button_pokemon_information" id="button_shiny_pokemon${pokeIndex}">shiny</button>
+                <button onclick="CheckShowImagePokemon(${pokeIndex}, 'normal')" class="button_pokemon_information button_information_activiated" id="button_normal_pokemon${pokeIndex}">normal</button>
+                <button onclick="CheckShowImagePokemon(${pokeIndex}, 'shiny')"class="button_pokemon_information" id="button_shiny_pokemon${pokeIndex}">shiny</button>
             </div>
             <div class="image_overlay">
                 <img id="normal_pokemon_image${pokeIndex}" class="img_pokemon_overlay" src="${
@@ -45,9 +45,9 @@ function templateOverlayPokemonDetails(pokeIndex) {
   }" alt="pokemon">
             </div>
             <div class="pokemon_information_switch_buttons">
-                    <button onclick="showGeneralInformation(${pokeIndex})" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
-                    <button onclick="showStatsInformation(${pokeIndex})" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
-                    <button onclick="showMovesInformation(${pokeIndex})" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
+                    <button onclick="showInformation(${pokeIndex}, 'general')" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
+                    <button onclick="showInformation(${pokeIndex}, 'stats')" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
+                    <button onclick="showInformation(${pokeIndex}, 'moves')" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
             </div>
             <div class="container_detail_information" id= "id_general_information${pokeIndex}">
                         <table>
