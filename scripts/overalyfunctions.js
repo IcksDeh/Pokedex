@@ -74,9 +74,7 @@ function loadPokemonMoves(pokeIndex) {
 }
 
 function loadEightPokemonMoves(pokeIndex) {
-  let showPokemonMoves = document.getElementById(
-    "show_pokemon_moves" + pokeIndex
-  );
+  let showPokemonMoves = document.getElementById("show_pokemon_moves" + pokeIndex);
   showPokemonMoves.innerHTML = "";
   for (let moveIndex = 0; moveIndex < 8; moveIndex++) {
     showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex, moveIndex);
@@ -84,9 +82,7 @@ function loadEightPokemonMoves(pokeIndex) {
 }
 
 function loadAllPokemonMoves(pokeIndex) {
-  let showPokemonMoves = document.getElementById(
-    "show_pokemon_moves" + pokeIndex
-  );
+  let showPokemonMoves = document.getElementById("show_pokemon_moves" + pokeIndex);
   showPokemonMoves.innerHTML = "";
   for (
     let moveIndex = 0;
@@ -109,6 +105,17 @@ function showInformation(pokeIndex, target) {
   })
 }
 
+function CheckShowImagePokemon(pokeIndex, target){
+  let pokeImages = ['normal', 'shiny'];
+  pokeImages.forEach(pokeImageElement =>{
+    if(pokeImageElement==target){
+      showImagePokemon(pokeIndex,pokeImageElement);
+    } else{
+      hideImagePokemon(pokeIndex,pokeImageElement);
+    }
+  })
+}
+
 function showDetailInformation(pokeIndex, elementInCategories){
   document.getElementById("id_" +elementInCategories + "_information" + pokeIndex).classList.remove("d_none");
   document.getElementById("button_" +elementInCategories + "_information" + pokeIndex).classList.add("button_information_activiated");
@@ -124,17 +131,6 @@ function checkLoadMoves(pokeIndex, target){
     loadPokemonMoves(pokeIndex);
     }
   }
-
-function CheckShowImagePokemon(pokeIndex, target){
-  let pokeImages = ['normal', 'shiny'];
-  pokeImages.forEach(pokeImageElement =>{
-    if(pokeImageElement==target){
-      showImagePokemon(pokeIndex,pokeImageElement);
-    } else{
-      hideImagePokemon(pokeIndex,pokeImageElement);
-    }
-  })
-}
 
 function showImagePokemon(pokeIndex,pokeImageElement){
   document.getElementById("button_"+pokeImageElement+"_pokemon"+pokeIndex).classList.add("button_information_activiated");

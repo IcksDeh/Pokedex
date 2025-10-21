@@ -28,7 +28,7 @@
 
 @media (max-width: 550px) {
   .overlay_pokemon {
-    width: calc(100% - 100px);
+    width: calc(100% - 50px);
     box-sizing: border-box;
     position: fixed;
   }
@@ -61,5 +61,19 @@
 
   .overlay_pokemon {
     height: 650px;
+  }
+}
+
+@media(max-width:400px){
+  .overlay_pokemon{
+    width: 100%;
+    margin: 0;
+    overflow: scroll;
+    padding: 0;
+  }
+
+  .sort_content_overlay{
+    margin: 0;
+    width: 100%;
   }
 }

@@ -157,10 +157,6 @@ ul {
   list-style-type: none;
 }
 
-.block_scrolling {
-  overflow: hidden;
-}
-
 #id_search_pokemon {
   margin: 0 !important;
   height: 30px;

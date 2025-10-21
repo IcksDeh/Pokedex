@@ -38,9 +38,7 @@ function showPokemon() {
 }
 
 function showTypeEachPokemon(pokeIndex) {
-  let showLabelEachPokemon = document.getElementById(
-    "id_sort_lable_type_pokemon" + pokeIndex
-  );
+  let showLabelEachPokemon = document.getElementById("id_sort_lable_type_pokemon" + pokeIndex);
   for (
     let typeIndex = 0;
     typeIndex < detailPokemonInfo[pokeIndex].types.length;
@@ -56,31 +54,22 @@ function showTypeEachPokemon(pokeIndex) {
 function showLoadingSpinner() {
   let loadingSpinner = document.getElementById("id_loading_spinner");
   loadingSpinner.classList.remove("d_none");
-  disableCatchNextPokemonBtn();
+  checkVisibilityCatchNextButton();
 }
 
-function disableCatchNextPokemonBtn() {
-  let catchNextPokemonBtn = document.getElementById(
-    "id_button_catch_next_pokemon"
-  );
-  if (catchNextPokemonBtn != null) {
-    catchNextPokemonBtn.disabled = true;
-  }
-}
-
-function enableCatchNextPokemonBtn() {
-  let catchNextPokemonBtn = document.getElementById(
-    "id_button_catch_next_pokemon"
-  );
-  if (catchNextPokemonBtn != null) {
-    catchNextPokemonBtn.disabled = false;
+function checkVisibilityCatchNextButton(){
+  let catchNextPokemonBtn = document.getElementById("id_button_catch_next_pokemon");
+    if (catchNextPokemonBtn != null){
+      if(catchNextPokemonBtn.disabled == true){
+        catchNextPokemonBtn.disabled = false;
+      } else {catchNextPokemonBtn.disabled = true}
   }
 }
 
 function removeLoadingSpinner() {
   let loadingSpinner = document.getElementById("id_loading_spinner");
   loadingSpinner.classList.add("d_none");
-  enableCatchNextPokemonBtn();
+  checkVisibilityCatchNextButton();
 }
 
 function showCatchNextButton() {
@@ -90,8 +79,8 @@ function showCatchNextButton() {
 
 async function loadMorePokemon() {
   showLoadingSpinner();
-  offset += 5;
-  let morePokemon = `https://pokeapi.co/api/v2/pokemon?limit=5&offset=${offset}`;
+  offset += 20;
+  let morePokemon = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`;
   const fetchPokemonAPI = await fetch(morePokemon);
   const pokemon = await fetchPokemonAPI.json();
   allPokemon = pokemon.results;
