@@ -113,8 +113,8 @@ function templateOverlayPokemonDetails(pokeIndex) {
                         </ul>
             </div>
             <div class="sort_next_previus_button">
-                <button onclick="showPreviousPokemon(${pokeIndex})" class="style_next_previous_button" id="id_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
-                <button onclick="showNextPokemon(${pokeIndex})" class="style_next_previous_button" id="id_next_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
+                <button onclick="changePokemon(${pokeIndex}, -1)" class="style_next_previous_button" id="id_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
+                <button onclick="changePokemon(${pokeIndex}, +1)" class="style_next_previous_button" id="id_next_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
             </div>  `;
 }
 

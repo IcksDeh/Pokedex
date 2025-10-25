@@ -51,17 +51,10 @@ function unlockScrolling() {
   lockScroll.classList.remove("lock_scroll");
 }
 
-function showPreviousPokemon(pokeIndex) {
-  let previousPokemon = pokeIndex - 1;
-  if (previousPokemon >= 0) {
-    showPokemonOverlay(previousPokemon);
-  }
-}
-
-function showNextPokemon(pokeIndex) {
-  let nextPokemon = pokeIndex + 1;
-  if (nextPokemon < detailPokemonInfo.length) {
-    showPokemonOverlay(nextPokemon);
+function changePokemon(pokeIndex, direction){
+  let newPokeIndex = pokeIndex + direction;
+  if(newPokeIndex >=0 && newPokeIndex < detailPokemonInfo.length) {
+    showPokemonOverlay(newPokeIndex);
   }
 }
 
@@ -97,33 +90,21 @@ function showInformation(pokeIndex, target) {
   let categories = ['general','stats','moves'];
   categories.forEach(elementInCategories => {
     if(elementInCategories == target){
-      showDetailInformation(pokeIndex,elementInCategories);
+      showDetailInformation(pokeIndex,elementInCategories, true);
       checkLoadMoves(pokeIndex,elementInCategories);
     } else{
-      hideDetailInformation(pokeIndex,elementInCategories);
+      showDetailInformation(pokeIndex,elementInCategories, false);
     }
   })
 }
 
-function CheckShowImagePokemon(pokeIndex, target){
-  let pokeImages = ['normal', 'shiny'];
-  pokeImages.forEach(pokeImageElement =>{
-    if(pokeImageElement==target){
-      showImagePokemon(pokeIndex,pokeImageElement);
-    } else{
-      hideImagePokemon(pokeIndex,pokeImageElement);
-    }
-  })
-}
+function showDetailInformation(pokeIndex,elementInCategories, show){
+  let showDetails = document.getElementById("id_" +elementInCategories + "_information" + pokeIndex);
+  let adjustButton = document.getElementById("button_" +elementInCategories + "_information" + pokeIndex);
 
-function showDetailInformation(pokeIndex, elementInCategories){
-  document.getElementById("id_" +elementInCategories + "_information" + pokeIndex).classList.remove("d_none");
-  document.getElementById("button_" +elementInCategories + "_information" + pokeIndex).classList.add("button_information_activiated");
-}
+  showDetails.classList.toggle("d_none", !show);
+  adjustButton.classList.toggle("button_information_activiated", show);
 
-function hideDetailInformation(pokeIndex,elementInCategories){
-  document.getElementById("id_"+ elementInCategories +"_information" + pokeIndex).classList.add("d_none");
-  document.getElementById("button_" +elementInCategories + "_information" + pokeIndex).classList.remove("button_information_activiated");
 }
 
 function checkLoadMoves(pokeIndex, target){
@@ -131,13 +112,21 @@ function checkLoadMoves(pokeIndex, target){
     loadPokemonMoves(pokeIndex);
     }
   }
-
-function showImagePokemon(pokeIndex,pokeImageElement){
-  document.getElementById("button_"+pokeImageElement+"_pokemon"+pokeIndex).classList.add("button_information_activiated");
-  document.getElementById(pokeImageElement+"_pokemon_image" + pokeIndex).classList.remove("d_none");
+function CheckShowImagePokemon(pokeIndex, target){
+  let pokeImages = ['normal', 'shiny'];
+  pokeImages.forEach(pokeImageElement =>{
+    if(pokeImageElement==target){
+      showImagePokemon(pokeIndex,pokeImageElement, true);
+    } else{
+      showImagePokemon(pokeIndex,pokeImageElement, false);
+    }
+  })
 }
 
-function hideImagePokemon(pokeIndex,pokeImageElement){
-  document.getElementById("button_"+pokeImageElement+"_pokemon" + pokeIndex).classList.remove("button_information_activiated");
-  document.getElementById(pokeImageElement+"_pokemon_image" + pokeIndex).classList.add("d_none");
+function showImagePokemon(pokeIndex,pokeImageElement, show){
+  let adjustButton = document.getElementById("button_"+pokeImageElement+"_pokemon"+pokeIndex);
+  let showImage = document.getElementById(pokeImageElement+"_pokemon_image" + pokeIndex);
+
+  adjustButton.classList.toggle("button_information_activiated", show);
+  showImage.classList.toggle("d_none", !show);
 }
