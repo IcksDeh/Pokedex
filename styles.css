@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-attachment: fixed;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .lock_scroll {
