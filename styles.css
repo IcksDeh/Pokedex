@@ -46,6 +46,7 @@ main {
 
 p {
   font-family: luckiest_guy;
+  font-size: 16px;
 }
 
 .d_none {
@@ -163,4 +164,5 @@ ul {
   height: 30px;
   width: 200px;
   font-family: luckiest_guy;
+  font-size: 16px;
 }

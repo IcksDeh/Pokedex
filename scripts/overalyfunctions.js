@@ -1,31 +1,24 @@
 let dialogOverlay = document.getElementById("id_overlay_pokemon");
 
-function showPokemonOverlay(pokeIndex) {
-  let showPokemonDetails = document.getElementById("id_overlay_pokemon");
-  removeBackgroundColor();showPokemonDetails.classList.add(detailPokemonInfo[pokeIndex].types[0].type.name + "_background");
+function showPokemonOverlay(pokeIndex, array) {
+  const showPokemonDetails = document.getElementById("id_overlay_pokemon");
+  removeBackgroundColor();showPokemonDetails.classList.add(array[pokeIndex].types[0].type.name + "_background");
   showPokemonDetails.showModal();
   showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex);
-  checkDisableButton(pokeIndex);
-  lockScrolling();
+  checkDisableButton(pokeIndex, array);
+  lockScrolling(true);
 }
 
-function lockScrolling() {
-  let lockScroll = document.getElementById("id_body");
-  lockScroll.classList.add("lock_scroll");
-}
+function checkDisableButton(pokeIndex, array) {
+  const previousButton = document.getElementById("id_previous_button");
+  const nextButton = document.getElementById("id_next_button");
 
-function checkDisableButton(pokeIndex) {
-  if (pokeIndex == 0) {
-    document.getElementById("id_previous_button").disabled = true;
-  }
-
-  if (pokeIndex == detailPokemonInfo.length - 1) {
-    document.getElementById("id_next_button").disabled = true;
-  }
+  previousButton.disabled = pokeIndex === 0;
+  nextButton.disabled = pokeIndex === array.length - 1
 }
 
 function removeBackgroundColor() {
-  let showPokemonDetails = document.getElementById("id_overlay_pokemon");
+  const showPokemonDetails = document.getElementById("id_overlay_pokemon");
   showPokemonDetails.classList.forEach((cls) => {
     if (cls.endsWith("_background")) {
       showPokemonDetails.classList.remove(cls);
@@ -34,60 +27,55 @@ function removeBackgroundColor() {
 }
 
 function closeOverlay() {
-  let showPokemonDetails = document.getElementById("id_overlay_pokemon");
+  const showPokemonDetails = document.getElementById("id_overlay_pokemon");
   showPokemonDetails.close();
-  unlockScrolling();
+  lockScrolling(false);
 }
 
 dialogOverlay.addEventListener("click", (event) => {
   if (event.target == dialogOverlay) {
     dialogOverlay.close();
-    unlockScrolling();
+    lockScrolling(false);
   }
 });
 
-function unlockScrolling() {
-  let lockScroll = document.getElementById("id_body");
-  lockScroll.classList.remove("lock_scroll");
+function lockScrolling(show){
+  const scorlling = document.getElementById("id_body");
+  scorlling.classList.toggle("lock_scroll", show);
 }
 
-function changePokemon(pokeIndex, direction){
-  let newPokeIndex = pokeIndex + direction;
-  if(newPokeIndex >=0 && newPokeIndex < detailPokemonInfo.length) {
-    showPokemonOverlay(newPokeIndex);
-  }
+function checkChangePokemon(pokeIndex, direction){
+  let activeArray = filteredPokemon.length > 0 ? filteredPokemon : detailPokemonInfo;
+  let currentPokemonIndex = activeArray.findIndex(pokemon => pokemon.id === detailPokemonInfo[pokeIndex].id);
+  changePokemon(currentPokemonIndex, direction, activeArray);
 }
+
+function changePokemon(pokeIndex,direction, array){
+  let newPokeIndex = pokeIndex + direction;
+  if(newPokeIndex >=0 && newPokeIndex < array.length)
+      showPokemonOverlay(newPokeIndex, array);
+      checkDisableButton(newPokeIndex, array);
+
+ }
 
 function loadPokemonMoves(pokeIndex) {
   if (detailPokemonInfo[pokeIndex].moves.length >= 8) {
-    loadEightPokemonMoves(pokeIndex);
+    loadAllPokemonMoves(pokeIndex, 8)
   } else {
-    loadAllPokemonMoves(pokeIndex);
+    loadAllPokemonMoves(pokeIndex, detailPokemonInfo[pokeIndex].moves.length);
   }
 }
 
-function loadEightPokemonMoves(pokeIndex) {
-  let showPokemonMoves = document.getElementById("show_pokemon_moves" + pokeIndex);
+function loadAllPokemonMoves(pokeIndex, countOfMoves){
+  const showPokemonMoves = document.getElementById("show_pokemon_moves" + pokeIndex);
   showPokemonMoves.innerHTML = "";
-  for (let moveIndex = 0; moveIndex < 8; moveIndex++) {
-    showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex, moveIndex);
-  }
-}
-
-function loadAllPokemonMoves(pokeIndex) {
-  let showPokemonMoves = document.getElementById("show_pokemon_moves" + pokeIndex);
-  showPokemonMoves.innerHTML = "";
-  for (
-    let moveIndex = 0;
-    moveIndex < detailPokemonInfo[pokeIndex].moves.length;
-    moveIndex++
-  ) {
+  for (let moveIndex = 0; moveIndex < countOfMoves; moveIndex++) {
     showPokemonMoves.innerHTML += showPokemonMoveTemplate(pokeIndex, moveIndex);
   }
 }
 
 function showInformation(pokeIndex, target) {
-  let categories = ['general','stats','moves'];
+  const categories = ['general','stats','moves'];
   categories.forEach(elementInCategories => {
     if(elementInCategories == target){
       showDetailInformation(pokeIndex,elementInCategories, true);
@@ -112,8 +100,9 @@ function checkLoadMoves(pokeIndex, target){
     loadPokemonMoves(pokeIndex);
     }
   }
+
 function CheckShowImagePokemon(pokeIndex, target){
-  let pokeImages = ['normal', 'shiny'];
+  const pokeImages = ['normal', 'shiny'];
   pokeImages.forEach(pokeImageElement =>{
     if(pokeImageElement==target){
       showImagePokemon(pokeIndex,pokeImageElement, true);

@@ -30,6 +30,7 @@
   .overlay_pokemon {
     box-sizing: border-box;
     position: fixed;
+    max-height: 700px;
   }
 
   .sort_header_overlay {

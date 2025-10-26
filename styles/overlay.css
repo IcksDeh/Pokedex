@@ -5,7 +5,8 @@
 }
 
 .overlay_pokemon {
-  height: 600px;
+  max-height: 600px;
+  height: 100%;
   max-width: 400px;
   width: 100%;
   position: fixed;
@@ -79,6 +80,7 @@
   align-items: center;
   justify-content: center;
   font-family: bebas;
+  font-size: 16px;
   gap: 8px;
   width: 130px;
 }
@@ -103,6 +105,7 @@
 .button_pokemon_information {
   width: 60px;
   font-family: bebas;
+  font-size: 16px;
 }
 
 .button_pokemon_information:hover {
