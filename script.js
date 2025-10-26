@@ -96,7 +96,7 @@ function showFilteredPokemon(searchTerm) {
     const eachPokeCard = document.getElementById("id_pokemon_card" + index);
     eachPokeCard.classList.toggle("d_none", !pokeName.includes(searchTerm));
     if(pokeName.includes(searchTerm)){
-      filteredPokemon.push(pokemon.name);
+      filteredPokemon.push(pokemon);
     }
   });
 }

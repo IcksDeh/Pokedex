@@ -18,11 +18,11 @@ function templateLabelEachPokemon(typeIndex, pokeIndex) {
   return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}_background">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`;
 }
 
-function templateOverlayPokemonDetails(pokeIndex) {
+function templateOverlayPokemonDetails(pokeIndex, array) {
   return `<div class="sort_header_overlay">
                 <div class="sort_id_name_overlay">
                      <p>${pokeIndex + 1}</p>
-                    <p>${detailPokemonInfo[pokeIndex].name}</p>
+                    <p>${array[pokeIndex].name}</p>
                 </div>
                 <div class="sort_x_button">
                      <button onclick="closeOverlay()" class="x_button">X</button>
@@ -34,27 +34,27 @@ function templateOverlayPokemonDetails(pokeIndex) {
             </div>
             <div class="image_overlay">
                 <img id="normal_pokemon_image${pokeIndex}" class="img_pokemon_overlay" src="${
-    detailPokemonInfo[pokeIndex].sprites.front_default
+    array[pokeIndex].sprites.front_default
   }" alt="pokemon">
                 <img id="shiny_pokemon_image${pokeIndex}" class="img_pokemon_overlay d_none" src="${
-    detailPokemonInfo[pokeIndex].sprites.front_shiny
+    array[pokeIndex].sprites.front_shiny
   }" alt="pokemon">
             </div>
             <div class="pokemon_information_switch_buttons">
-                    <button onclick="showInformation(${pokeIndex}, 'general')" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
-                    <button onclick="showInformation(${pokeIndex}, 'stats')" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
-                    <button onclick="showInformation(${pokeIndex}, 'moves')" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
+                    <button onclick="showInformation(${pokeIndex}, 'general', ${array})" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
+                    <button onclick="showInformation(${pokeIndex}, 'stats', ${array})" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
+                    <button onclick="showInformation(${pokeIndex}, 'moves', ${array})" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
             </div>
             <div class="container_detail_information" id= "id_general_information${pokeIndex}">
                         <table>
                             <tr>
                                 <td>Height:</td>
-                                <td>${detailPokemonInfo[pokeIndex].height}</td>
+                                <td>${array[pokeIndex].height}</td>
                                 
                             </tr>
                             <tr>
                                 <td>Weight:</td>
-                                <td>${detailPokemonInfo[pokeIndex].weight}</td>
+                                <td>${array[pokeIndex].weight}</td>
                             </tr>
                         </table>
             </div>
@@ -62,45 +62,27 @@ function templateOverlayPokemonDetails(pokeIndex) {
                         <table>
                             <tr>
                                 <td>HP:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[0]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[0].base_stat}</td>
                             </tr>
                             <tr>
                                 <td>Attack:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[1]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[1].base_stat}</td>
                             </tr>
                             <tr>
                                 <td>Defense:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[2]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[2].base_stat}</td>
                             </tr>
                             <tr>
                                 <td>Special Attack:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[3]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[3].base_stat}</td>
                             </tr>
                             <tr>
                                 <td>Special Defense:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[4]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[4].base_stat}</td>
                             </tr>
                             <tr>
                                 <td>Speed:</td>
-                                <td>${
-                                  detailPokemonInfo[pokeIndex].stats[5]
-                                    .base_stat
-                                }</td>
+                                <td>${array[pokeIndex].stats[5].base_stat}</td>
                             </tr>
                         </table>
             </div>
@@ -118,6 +100,6 @@ function templateCatchNextButton() {
   return ` <button id="id_button_catch_next_pokemon" onclick = loadMorePokemon() class="button_catch_next_pokemon"><img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next Pokemon!<img class="img_pokeball_catch_next_pokemon" src="./assets/img/pokeball_next_button_2.png" alt=""></button>`;
 }
 
-function showPokemonMoveTemplate(pokeIndex, moveIndex) {
-  return `<li>${detailPokemonInfo[pokeIndex].moves[moveIndex].move.name}</li>`;
+function showPokemonMoveTemplate(pokeIndex, moveIndex, array) {
+  return `<li>${array[pokeIndex].moves[moveIndex].move.name}</li>`;
 }

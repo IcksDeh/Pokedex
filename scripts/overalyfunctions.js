@@ -2,9 +2,10 @@ let dialogOverlay = document.getElementById("id_overlay_pokemon");
 
 function showPokemonOverlay(pokeIndex, array) {
   const showPokemonDetails = document.getElementById("id_overlay_pokemon");
-  removeBackgroundColor();showPokemonDetails.classList.add(array[pokeIndex].types[0].type.name + "_background");
+  removeBackgroundColor();
+  showPokemonDetails.classList.add(array[pokeIndex].types[0].type.name + "_background");
   showPokemonDetails.showModal();
-  showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex);
+  showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex, array);
   checkDisableButton(pokeIndex, array);
   lockScrolling(true);
 }
@@ -58,11 +59,11 @@ function changePokemon(pokeIndex,direction, array){
 
  }
 
-function loadPokemonMoves(pokeIndex) {
-  if (detailPokemonInfo[pokeIndex].moves.length >= 8) {
+function loadPokemonMoves(pokeIndex, array) {
+  if (array[pokeIndex].moves.length >= 8) {
     loadAllPokemonMoves(pokeIndex, 8)
   } else {
-    loadAllPokemonMoves(pokeIndex, detailPokemonInfo[pokeIndex].moves.length);
+    loadAllPokemonMoves(pokeIndex, array[pokeIndex].moves.length);
   }
 }
 
@@ -74,12 +75,12 @@ function loadAllPokemonMoves(pokeIndex, countOfMoves){
   }
 }
 
-function showInformation(pokeIndex, target) {
+function showInformation(pokeIndex, target, array) {
   const categories = ['general','stats','moves'];
   categories.forEach(elementInCategories => {
     if(elementInCategories == target){
       showDetailInformation(pokeIndex,elementInCategories, true);
-      checkLoadMoves(pokeIndex,elementInCategories);
+      checkLoadMoves(pokeIndex,elementInCategories, array);
     } else{
       showDetailInformation(pokeIndex,elementInCategories, false);
     }
@@ -95,9 +96,9 @@ function showDetailInformation(pokeIndex,elementInCategories, show){
 
 }
 
-function checkLoadMoves(pokeIndex, target){
+function checkLoadMoves(pokeIndex, target, array){
     if( target == "moves"){
-    loadPokemonMoves(pokeIndex);
+    loadPokemonMoves(pokeIndex, array);
     }
   }
 
