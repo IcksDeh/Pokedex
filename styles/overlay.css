@@ -5,12 +5,11 @@
 }
 
 .overlay_pokemon {
-  max-height: 600px;
+  max-height: 650px;
   height: 100%;
   max-width: 400px;
   width: 100%;
   position: fixed;
-  overflow: hidden;
   border-radius: 10px;
   z-index: 3;
   aspect-ratio: 1/2;

@@ -1,5 +1,5 @@
 function templatePokemonCard(pokeIndex) {
-  return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card ${detailPokemonInfo[pokeIndex].types[0].type.name}_border ${detailPokemonInfo[pokeIndex].types[0].type.name}_background_light" onclick="showPokemonOverlay(${pokeIndex}, detailPokemonInfo)">
+  return `<div id="id_pokemon_card${pokeIndex}" class="class_pokemon_card ${detailPokemonInfo[pokeIndex].types[0].type.name}_border ${detailPokemonInfo[pokeIndex].types[0].type.name}_background_light" onclick="checkPokemonOverlay(${pokeIndex}, detailPokemonInfo)">
                     <div class="sort_id_name_pokemon">
                         <p>${detailPokemonInfo[pokeIndex].id}</p>
                         <p>${detailPokemonInfo[pokeIndex].name}</p>
@@ -18,10 +18,10 @@ function templateLabelEachPokemon(typeIndex, pokeIndex) {
   return `<div class = "label_each_pokemon ${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}_background">${detailPokemonInfo[pokeIndex].types[typeIndex].type.name}</div>`;
 }
 
-function templateOverlayPokemonDetails(pokeIndex, array) {
+function templateOverlayPokemonDetails(pokeIndex, array, arrayName) {
   return `<div class="sort_header_overlay">
                 <div class="sort_id_name_overlay">
-                     <p>${pokeIndex + 1}</p>
+                     <p>${array[pokeIndex].id}</p>
                     <p>${array[pokeIndex].name}</p>
                 </div>
                 <div class="sort_x_button">
@@ -33,17 +33,13 @@ function templateOverlayPokemonDetails(pokeIndex, array) {
                 <button onclick="CheckShowImagePokemon(${pokeIndex}, 'shiny')"class="button_pokemon_information" id="button_shiny_pokemon${pokeIndex}">shiny</button>
             </div>
             <div class="image_overlay">
-                <img id="normal_pokemon_image${pokeIndex}" class="img_pokemon_overlay" src="${
-    array[pokeIndex].sprites.front_default
-  }" alt="pokemon">
-                <img id="shiny_pokemon_image${pokeIndex}" class="img_pokemon_overlay d_none" src="${
-    array[pokeIndex].sprites.front_shiny
-  }" alt="pokemon">
+                <img id="normal_pokemon_image${pokeIndex}" class="img_pokemon_overlay" src="${array[pokeIndex].sprites.front_default}" alt="pokemon">
+                <img id="shiny_pokemon_image${pokeIndex}" class="img_pokemon_overlay d_none" src="${array[pokeIndex].sprites.front_shiny}" alt="pokemon">
             </div>
             <div class="pokemon_information_switch_buttons">
-                    <button onclick="showInformation(${pokeIndex}, 'general', ${array})" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
-                    <button onclick="showInformation(${pokeIndex}, 'stats', ${array})" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
-                    <button onclick="showInformation(${pokeIndex}, 'moves', ${array})" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
+                    <button onclick="showInformation(${pokeIndex}, 'general', '${arrayName}')" class="button_pokemon_information button_information_activiated" id="button_general_information${pokeIndex}">general</button>
+                    <button onclick="showInformation(${pokeIndex}, 'stats', '${arrayName}')" class="button_pokemon_information" id="button_stats_information${pokeIndex}">stats</button>
+                    <button onclick="showInformation(${pokeIndex}, 'moves', '${arrayName}')" class="button_pokemon_information" id="button_moves_information${pokeIndex}">moves</button>
             </div>
             <div class="container_detail_information" id= "id_general_information${pokeIndex}">
                         <table>
@@ -91,8 +87,8 @@ function templateOverlayPokemonDetails(pokeIndex, array) {
                         </ul>
             </div>
             <div class="sort_next_previus_button">
-                <button onclick="checkChangePokemon(${pokeIndex}, -1)" class="style_next_previous_button" id="id_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
-                <button onclick="checkChangePokemon(${pokeIndex}, +1)" class="style_next_previous_button" id="id_next_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
+                <button onclick="changePokemon(${pokeIndex}, -1, '${arrayName}')" class="style_next_previous_button" id="id_previous_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Previous</button>
+                <button onclick="changePokemon(${pokeIndex}, +1, '${arrayName}')" class="style_next_previous_button" id="id_next_button"><img class="img_button_pokeball" src="./assets/img/pokeball_next_button_2.png" alt="">Catch Next</button>
             </div>  `;
 }
 

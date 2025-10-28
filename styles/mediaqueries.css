@@ -31,6 +31,8 @@
     box-sizing: border-box;
     position: fixed;
     max-height: 700px;
+    height: 100%;
+    padding: 0;
   }
 
   .sort_header_overlay {
@@ -57,10 +59,6 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
-  }
-
-  .overlay_pokemon {
-    height: 650px;
   }
 }
 

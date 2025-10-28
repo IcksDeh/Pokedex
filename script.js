@@ -68,6 +68,7 @@ function showCatchNextButton() {
 async function loadMorePokemon() {
   loadingSpinner(true);
   document.getElementById("id_search_pokemon").value = "";
+  filteredPokemon = [];
   offset += 20;
   const morePokemon = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`;
   const fetchPokemonAPI = await fetch(morePokemon);
@@ -86,6 +87,7 @@ function filterbyName(event) {
       const eachPokeCard = document.getElementById("id_pokemon_card" + index);
       eachPokeCard.classList.remove("d_none");
     });
+    filteredPokemon = [];
   }
 }
 
@@ -99,4 +101,5 @@ function showFilteredPokemon(searchTerm) {
       filteredPokemon.push(pokemon);
     }
   });
+  console.log(filteredPokemon);
 }
