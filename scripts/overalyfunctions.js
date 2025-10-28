@@ -1,23 +1,17 @@
 let dialogOverlay = document.getElementById("id_overlay_pokemon");
 
 function checkPokemonOverlay(pokeIndex) {
- let activeArray = filteredPokemon.length > 0 ? filteredPokemon : detailPokemonInfo;
- let arrayName = "";
- if(activeArray ===filteredPokemon){
-  arrayName = "filteredPokemon";
- }else{
-  arrayName = "detailPokemonInfo"
- }
+ let activeArray = searchIsActivated ? filteredPokemon : detailPokemonInfo;
   let currentPokemonIndex = activeArray.findIndex(pokemon => pokemon.id === detailPokemonInfo[pokeIndex].id);
-  showPokemonOverlay(currentPokemonIndex, activeArray, arrayName);
+  showPokemonOverlay(currentPokemonIndex, activeArray);
 }
 
-function showPokemonOverlay(pokeIndex, activeArray, arrayName){
+function showPokemonOverlay(pokeIndex, activeArray){
   const showPokemonDetails = document.getElementById("id_overlay_pokemon");
   removeBackgroundColor();
   showPokemonDetails.classList.add(activeArray[pokeIndex].types[0].type.name + "_background");
   showPokemonDetails.showModal();
-  showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex, activeArray, arrayName);
+  showPokemonDetails.innerHTML = templateOverlayPokemonDetails(pokeIndex, activeArray);
   checkDisableButton(pokeIndex, activeArray);
   lockScrolling(true);
 }
@@ -45,27 +39,20 @@ function closeOverlay() {
   lockScrolling(false);
 }
 
-dialogOverlay.addEventListener("click", (event) => {
-  if (event.target == dialogOverlay) {
-    dialogOverlay.close();
+dialogOverlay.addEventListener("close", () => {
     lockScrolling(false);
-  }
-});
+  })
 
 function lockScrolling(show){
   const scorlling = document.getElementById("id_body");
   scorlling.classList.toggle("lock_scroll", show);
 }
 
-function changePokemon(pokeIndex, direction, arrayname){
+function changePokemon(pokeIndex, direction){
   let newPokeIndex = pokeIndex + direction;
-  if(arrayname == "filteredPokemon"){
-    activeArray = filteredPokemon;
-  } else {
-    activeArray = detailPokemonInfo;
-  }
+  let activeArray = searchIsActivated ? filteredPokemon : detailPokemonInfo;
   if(newPokeIndex >=0 && newPokeIndex < activeArray.length)
-      showPokemonOverlay(newPokeIndex, activeArray, arrayname);
+      showPokemonOverlay(newPokeIndex, activeArray);
       checkDisableButton(newPokeIndex, activeArray);
  }
 
@@ -85,12 +72,8 @@ function loadAllPokemonMoves(pokeIndex, countOfMoves, array){
   }
 }
 
-function showInformation(pokeIndex, target, array) {
-  if(array == 'filteredPokemon'){
-    activeArray = filteredPokemon;
-  } else {
-    activeArray = detailPokemonInfo;
-  }
+function showInformation(pokeIndex, target) {
+  let activeArray = searchIsActivated ? filteredPokemon : detailPokemonInfo;
   const categories = ['general','stats','moves'];
   categories.forEach(elementInCategories => {
     if(elementInCategories == target){
@@ -108,7 +91,6 @@ function showDetailInformation(pokeIndex,elementInCategories, show){
 
   showDetails.classList.toggle("d_none", !show);
   adjustButton.classList.toggle("button_information_activiated", show);
-
 }
 
 function checkLoadMoves(pokeIndex, target, array){

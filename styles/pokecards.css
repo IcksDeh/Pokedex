@@ -25,7 +25,7 @@
                 -3px 8px 50px -16px #000000;
     cursor: pointer;
     transform: scale(1.1);
-            }
+}
 
 .show_pokemon{
     display: flex;
@@ -40,7 +40,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .sort_id_name_pokemon{
@@ -59,7 +58,6 @@
 
 .sort_all_pokemon{
     display: flex;
-
 }
 
 #id_search_pokemon{

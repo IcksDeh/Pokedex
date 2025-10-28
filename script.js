@@ -3,6 +3,7 @@ let detailPokemonInfo = [];
 let offset = 0;
 let searchTermInputfield = 0;
 let filteredPokemon = [];
+let searchIsActivated = false;
 
 function init() {
   loadingSpinner(true);
@@ -81,6 +82,7 @@ function filterbyName(event) {
   let searchTerm = event.target.value;
   searchTermInputfield = searchTerm;
   if (searchTerm.length >= 3) {
+    searchIsActivated = true;
     showFilteredPokemon(searchTerm);
   } else {
     detailPokemonInfo.forEach((pokemon, index) => {
@@ -88,6 +90,7 @@ function filterbyName(event) {
       eachPokeCard.classList.remove("d_none");
     });
     filteredPokemon = [];
+    searchIsActivated = false;
   }
 }
 
@@ -101,5 +104,4 @@ function showFilteredPokemon(searchTerm) {
       filteredPokemon.push(pokemon);
     }
   });
-  console.log(filteredPokemon);
 }
